@@ -147,7 +147,7 @@ class _WrapReorderingAnimationState extends State<_WrapReorderingAnimation> {
   @override
   void initState() {
     super.initState();
-    final List<MaterialColor> colors = Colors.primaries;
+    const List<MaterialColor> colors = Colors.primaries;
     for (var i = 0; i < colors.length; i++) {
       tiles.add(_TileModel(color: colors[i], text: '$i'));
     }
@@ -160,7 +160,7 @@ class _WrapReorderingAnimationState extends State<_WrapReorderingAnimation> {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.all(4),
-            child: LocalHeroOverlay(
+            child: _LocalHeroOverlay(
               child: Center(
                 child: Wrap(
                   spacing: spacing,
@@ -222,12 +222,12 @@ class _AcrossContainersAnimationState
   @override
   void initState() {
     super.initState();
-    final List<MaterialColor> primaries = Colors.primaries;
+    const List<MaterialColor> primaries = Colors.primaries;
     for (var i = 0; i < 5; i++) {
       final _TileModel tile = _TileModel(color: primaries[i], text: 'p$i');
       rowTiles.add(tile);
     }
-    final List<MaterialAccentColor> accents = Colors.accents;
+    const List<MaterialAccentColor> accents = Colors.accents;
     for (var i = 0; i < 5; i++) {
       final _TileModel tile = _TileModel(color: accents[i], text: 'a$i');
       colTiles.add(tile);
@@ -298,7 +298,7 @@ class _DraggableExampleState extends State<_DraggableExample> {
   @override
   void initState() {
     super.initState();
-    final List<MaterialColor> colors = Colors.primaries;
+    const List<MaterialColor> colors = Colors.primaries;
     for (var i = 0; i < colors.length; i++) {
       tiles.add(_TileModel(color: colors[i], text: 'd$i'));
     }
@@ -376,8 +376,8 @@ class _DraggableTileState extends State<_DraggableTile> {
   }
 }
 
-class LocalHeroOverlay extends StatefulWidget {
-  const LocalHeroOverlay({
+class _LocalHeroOverlay extends StatefulWidget {
+  const _LocalHeroOverlay({
     Key? key,
     this.child,
   }) : super(key: key);
@@ -388,7 +388,7 @@ class LocalHeroOverlay extends StatefulWidget {
   _LocalHeroOverlayState createState() => _LocalHeroOverlayState();
 }
 
-class _LocalHeroOverlayState extends State<LocalHeroOverlay> {
+class _LocalHeroOverlayState extends State<_LocalHeroOverlay> {
   @override
   Widget build(BuildContext context) {
     return ClipRect(
@@ -401,8 +401,8 @@ class _LocalHeroOverlayState extends State<LocalHeroOverlay> {
   }
 }
 
-class TestOne extends StatefulWidget {
-  const TestOne({
+class _TestOne extends StatefulWidget {
+  const _TestOne({
     Key? key,
   }) : super(key: key);
 
@@ -410,7 +410,7 @@ class TestOne extends StatefulWidget {
   _TestOneState createState() => _TestOneState();
 }
 
-class _TestOneState extends State<TestOne> {
+class _TestOneState extends State<_TestOne> {
   final List<Widget> children = <Widget>[
     LocalHero(
       tag: 0,
